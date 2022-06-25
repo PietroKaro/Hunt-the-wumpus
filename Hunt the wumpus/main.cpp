@@ -19,7 +19,7 @@ const char KACTION_MOVE = 'M';
 
 void instructions()
 {
-	string instructions = "Your goal is kill a monster called \"Wumpus\" in a map composed by rooms;\n"
+	string instructions = "Your goal is to kill a monster called \"Wumpus\" in a map composed by rooms;\n"
 		"Each room is linked to three other rooms but some of these are dangerous;\n"
 		"There are rooms with a giant bat that take you in another random room and rooms with a bottomless pit;\n"
 		"If you move in the wumpus room, if you fall in a bottomless pit or if you have 0 ammo, you lose the game;\n"
