@@ -146,7 +146,7 @@ tuple<bool, bool, bool, string, string> getRoomInfo(const Room& room, bool nearR
 tuple<char, vector<int>> getPlayerAction()
 {
 	auto result_action = make_tuple<char, vector<int>>(0, {});
-	regex pat_action{ R"(((s|S)\s\d{2,}\s\d{2,}\s\d{2,}$)|((s|S)\s\d{2,}\s\d{2,}$)|((m|s|M|S)\s\d{2,}$))" };
+	regex pat_action{ R"((^[sS]\s\d{2,}\s\d{2,}\s\d{2,}$)|(^[sS]\s\d{2,}\s\d{2,}$)|(^[msMS]\s\d{2,}$))" };
 	cout << "Choose an action: ";
 	for (string action; getline(cin, action);)
 	{
@@ -159,7 +159,7 @@ tuple<char, vector<int>> getPlayerAction()
 			break;
 		}
 		else
-			cout << "Invalid input!\n";
+			cout << "Invalid input!\nChoose an action: ";
 	}
 	if (cin.bad())
 		throw ios_base::failure{ "Fatal io stream error" };
